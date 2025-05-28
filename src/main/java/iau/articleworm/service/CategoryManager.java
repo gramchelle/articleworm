@@ -1,24 +1,23 @@
-package iau.articleworm.business.concretes;
+package iau.articleworm.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import iau.articleworm.business.abstracts.CategoryService;
-import iau.articleworm.entities.abstracts.CategoryDao;
+import iau.articleworm.service.CategoryService;
+import iau.articleworm.repository.CategoryRepository;
 
 @Service
-public class CategoryManager implements CategoryService{
+public class CategoryManager{
 
-    private CategoryDao categoryDao;
+    private final CategoryRepository categoryDao;
 
     @Autowired
-    public CategoryManager(CategoryDao categoryDao) {
+    public CategoryManager(CategoryRepository categoryDao) {
         this.categoryDao = categoryDao;
     }
 
-    @Override
     public List<String> getAllCategories() {
         return categoryDao.findAll().stream()
                 .map(category -> category.getCategoryName())

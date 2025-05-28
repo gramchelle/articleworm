@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import iau.articleworm.business.abstracts.NotificationService;
-import iau.articleworm.entities.concretes.Notification;
+import iau.articleworm.service.NotificationService;
+import iau.articleworm.model.Notification;
 
 @RestController
 @RequestMapping("/api/notifications")

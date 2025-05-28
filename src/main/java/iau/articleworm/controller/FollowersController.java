@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import iau.articleworm.business.abstracts.FollowerService;
-import iau.articleworm.entities.concretes.Follower;
+import iau.articleworm.service.FollowerService;
+import iau.articleworm.model.Follower;
 
 @RestController
 @RequestMapping("/api/followers")

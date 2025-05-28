@@ -5,17 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import iau.articleworm.business.abstracts.CommentService;
-import iau.articleworm.entities.abstracts.CommentDao;
-import iau.articleworm.entities.concretes.Comment;
+import iau.articleworm.service.CommentService;
+import iau.articleworm.repository.CommentRepository;
+import iau.articleworm.model.Comment;
 
 @Service
-public class CommentManager implements CommentService {
+public class CommentManager{
 
-    private CommentDao commentDao;
+    private CommentRepository commentDao;
 
     @Autowired
-    public CommentManager(CommentDao commentDao) {
+    public CommentManager(CommentRepository commentDao) {
         this.commentDao = commentDao;
     }
 

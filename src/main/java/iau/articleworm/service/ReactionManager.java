@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import iau.articleworm.business.abstracts.ReactionService;
-import iau.articleworm.entities.abstracts.ReactionDao;
-import iau.articleworm.entities.concretes.Reaction;
+import iau.articleworm.service.ReactionService;
+import iau.articleworm.repository.ReactionRepository;
+import iau.articleworm.model.Reaction;
 
 @Service
 public class ReactionManager implements ReactionService {

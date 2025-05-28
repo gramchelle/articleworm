@@ -5,21 +5,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import iau.articleworm.business.abstracts.UserService;
-import iau.articleworm.entities.abstracts.UserDao;
-import iau.articleworm.entities.concretes.User;
+import iau.articleworm.service.UserService;
+import iau.articleworm.repository.UserRepository;
+import iau.articleworm.model.User;
 
 @Service
-public class UserManager implements UserService {
+public class UserManager {
 
-    private UserDao userDao;
+    private final UserRepository userDao;
 
     @Autowired
-    public UserManager(UserDao userDao) {
+    public UserManager(UserRepository userDao) {
         this.userDao = userDao;
     }
 
-    @Override
     public List<User> getAllUsers() {
         return this.userDao.findAll();
     }

@@ -5,25 +5,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import iau.articleworm.business.abstracts.FollowerService;
-import iau.articleworm.entities.abstracts.FollowerDao;
-import iau.articleworm.entities.concretes.Follower;
+import iau.articleworm.service.FollowerService;
+import iau.articleworm.repository.FollowerRepository;
+import iau.articleworm.model.Follower;
 
 
 @Service
-public class FollowerManager implements FollowerService{
+public class FollowerManager{
 
-    private FollowerDao followerDao;
+    private FollowerRepository followerDao;
 
     @Autowired
-    public FollowerManager(FollowerDao followerDao){
+    public FollowerManager(FollowerRepository followerDao){
         this.followerDao = followerDao;
     }
 
-    @Override
     public List<Follower> getAllFollowersByUserId(int userId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllFollowersByUserId'");
+        
     }
 
 }

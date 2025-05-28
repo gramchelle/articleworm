@@ -1,4 +1,4 @@
-package iau.articleworm.entities.concretes;
+package iau.articleworm.model;
 
 import java.util.Set;
 

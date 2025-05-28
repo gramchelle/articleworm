@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import iau.articleworm.entities.concretes.Notification;
+import iau.articleworm.model.Notification;
 
-public interface NotificationDao extends JpaRepository<Notification, Integer> {
+public interface NotificationRepository extends JpaRepository<Notification, Integer> {
 
 }

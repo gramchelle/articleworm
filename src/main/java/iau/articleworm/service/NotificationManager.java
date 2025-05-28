@@ -5,30 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import iau.articleworm.business.abstracts.NotificationService;
-import iau.articleworm.entities.abstracts.NotificationDao;
-import iau.articleworm.entities.concretes.Notification;
+import iau.articleworm.service.NotificationService;
+import iau.articleworm.repository.NotificationRepository;
+import iau.articleworm.model.Notification;
 
 @Service
-public class NotificationManager implements NotificationService{
+public class NotificationManager{
 
-    private NotificationDao notificationDao;
+    private NotificationRepository notificationDao;
     
     @Autowired
-    public NotificationManager(NotificationDao notificationDao){
+    public NotificationManager(NotificationRepository notificationDao){
         this.notificationDao = notificationDao;
-    }
-
-    @Override
-    public List<Notification> getAllNotificationsByUserId(int userId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllNotificationsByUserId'");
-    }
-
-    @Override
-    public List<Notification> getAllNotificationsByArticleId(int articleId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllNotificationsByArticleId'");
     }
 
 }

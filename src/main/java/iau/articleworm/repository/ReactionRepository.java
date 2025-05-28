@@ -2,8 +2,8 @@ package iau.articleworm.entities.abstracts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import iau.articleworm.entities.concretes.Reaction;
+import iau.articleworm.model.Reaction;
 
-public interface ReactionDao extends JpaRepository<Reaction, Integer> {
+public interface ReactionRepository extends JpaRepository<Reaction, Integer> {
 
 }

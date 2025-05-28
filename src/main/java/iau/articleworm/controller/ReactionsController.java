@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import iau.articleworm.business.abstracts.ReactionService;
-import iau.articleworm.entities.concretes.Reaction;
+import iau.articleworm.service.ReactionService;
+import iau.articleworm.model.Reaction;
 
 @RestController
 @RequestMapping("/api/reactions")

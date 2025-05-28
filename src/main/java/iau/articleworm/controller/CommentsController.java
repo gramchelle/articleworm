@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import iau.articleworm.business.abstracts.CommentService;
-import iau.articleworm.entities.concretes.Comment;
+import iau.articleworm.service.CommentService;
+import iau.articleworm.model.Comment;
 
 @RestController
 @RequestMapping("/api/comments")

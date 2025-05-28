@@ -1,4 +1,4 @@
-package iau.articleworm.entities.concretes;
+package iau.articleworm.model;
 
 public enum ReactionType {
     LIKE((short) 1),

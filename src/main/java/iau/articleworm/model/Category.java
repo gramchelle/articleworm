@@ -1,4 +1,4 @@
-package iau.articleworm.entities.concretes;
+package iau.articleworm.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import iau.articleworm.business.abstracts.UserService;
-import iau.articleworm.entities.concretes.User;
+import iau.articleworm.service.UserService;
+import iau.articleworm.model.User;
 
 @RestController
 @RequestMapping("/api/users")

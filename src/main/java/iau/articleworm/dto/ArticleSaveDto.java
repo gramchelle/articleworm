@@ -1,4 +1,4 @@
-package iau.articleworm.dto.requestDto;
+package iau.articleworm.dto;
 
 import lombok.Getter;
 import lombok.Setter;

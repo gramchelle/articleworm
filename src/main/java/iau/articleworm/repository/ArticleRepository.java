@@ -3,9 +3,9 @@ package iau.articleworm.entities.abstracts;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import iau.articleworm.entities.concretes.Article;
+import iau.articleworm.model.Article;
 
-public interface ArticleDao extends JpaRepository<Article, Integer> { 
+public interface ArticleRepository extends JpaRepository<Article, Integer> { 
 
     List<GetAllArticlesDto> getAllArticles();
 
