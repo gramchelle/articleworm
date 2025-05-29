@@ -18,6 +18,7 @@ import iau.articleworm.service.concrete.ArticleService;
 import lombok.RequiredArgsConstructor;
 import iau.articleworm.dto.ArticleDto;
 import iau.articleworm.dto.ArticleSaveDto;
+import iau.articleworm.dto.ArticleUpdateDto;
 import iau.articleworm.model.Article;
 
 @RestController
@@ -34,7 +35,7 @@ public class ArticlesController {
         return new ResponseEntity<>(articles, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/article/{id}")
     public Article getArticleById(@PathVariable Long id) {
         return articleService.getArticleById(id);
     }
@@ -45,15 +46,21 @@ public class ArticlesController {
         return new ResponseEntity<>(articleSaved, HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
-    public Article updateArticle(@PathVariable Long id, @RequestBody Article article) {
-        return articleService.updateArticle(id, article);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteArticle(@PathVariable Long id) {
+    @DeleteMapping("/delete/{id}")
+        public void deleteArticle(@PathVariable Long id) {
         articleService.deleteArticle(id);
     }
-    
 
+    @PutMapping("/{article_id}/update")
+    public ResponseEntity<Article> updateArticle(
+            @PathVariable Long article_id,
+            @RequestBody ArticleUpdateDto articleUpdateDto) {
+
+        Article updatedArticle = articleService.updateArticle(article_id, articleUpdateDto);
+        if (updatedArticle != null) {
+            return ResponseEntity.ok(updatedArticle);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

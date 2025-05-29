@@ -1,5 +1,6 @@
 package iau.articleworm.service.concrete;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -58,16 +59,25 @@ public class ArticleService implements IArticleService {
     }
 
     @Override
-    public Article updateArticle(Long id, Article updatedArticle) {
-        Article article = articleRepository.findById(id.intValue())
-            .orElseThrow(() -> new RuntimeException("Article not found with id: " + id));
+    public Article updateArticle(Long article_id, ArticleUpdateDto articleUpdateDto) {
+        Article existingArticle = articleRepository.findById(article_id.intValue())
+            .orElseThrow(() -> new RuntimeException("Article not found with id: " + article_id));
 
-        article.setTitle(updatedArticle.getTitle());
-        article.setContent(updatedArticle.getContent());
-        article.setUpdatedAt(updatedArticle.getUpdatedAt());
-        // category de re-set edilebilir.
+        if (articleUpdateDto.getTitle() != null) {
+            existingArticle.setTitle(articleUpdateDto.getTitle());
+        }
 
-        return articleRepository.save(article);
+        if (articleUpdateDto.getContent() != null) {
+            existingArticle.setContent(articleUpdateDto.getContent());
+        }
+/*
+        if (articleUpdateDto.getCategory() != null) {
+            existingArticle.setCategory(articleUpdateDto.getCategory());
+        }
+*/
+        existingArticle.setUpdatedAt(LocalDateTime.now()); // Güncellenme zamanı da elle set edebilirsin
+
+        return articleRepository.save(existingArticle);
     }
 
     @Override
