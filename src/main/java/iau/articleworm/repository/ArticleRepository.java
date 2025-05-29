@@ -1,22 +1,19 @@
-package iau.articleworm.entities.abstracts;
+package iau.articleworm.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import java.util.List;
+import java.util.Optional;
+
+import iau.articleworm.dto.*;
 
 import iau.articleworm.model.Article;
+import iau.articleworm.model.Category;
 
+@Repository
 public interface ArticleRepository extends JpaRepository<Article, Integer> { 
 
-    List<GetAllArticlesDto> getAllArticles();
-
-    Boolean addArticle(ArticleSaveDto article);
-    
-    Boolean deleteArticle(Long id);
-
-    Boolean updateArticle(Long id, Article article);
-
-    Article getArticleById(Long id);
-
-    List<Article> getArticlesByUsername(String username);
+    Optional<Article> findByTitle(String title);
+    List<Article> findAllByCategory(Category category);
 
 }

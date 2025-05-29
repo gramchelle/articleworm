@@ -1,13 +1,16 @@
-package iau.articleworm.entities.abstracts;
+package iau.articleworm.repository;
+
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
+import iau.articleworm.model.Article;
 import iau.articleworm.model.User;
 
+@Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-    // User entity'sine özel sorgular buraya yazılabilir.
-    // Örneğin: List<User> findByUsername(String username);
-    // @Query("SELECT u FROM User u WHERE u.username = ?1")
-    // List<User> findByUsername(String username);
+
 
 }

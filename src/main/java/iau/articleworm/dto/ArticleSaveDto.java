@@ -9,6 +9,6 @@ public class ArticleSaveDto{
     
     private String title;
     private String content;
-    private String author;
-    private String category;
+    private Integer author_id; 
+    private Integer category_id; 
 }

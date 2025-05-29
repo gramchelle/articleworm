@@ -1,9 +1,11 @@
-package iau.articleworm.entities.abstracts;
+package iau.articleworm.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import iau.articleworm.model.Category;
 
+@Repository
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
     
 }

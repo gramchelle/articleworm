@@ -5,8 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class GetAllArticles {
+public class ArticleDto{
+    
+    private Long id;
     private String title;
-    private String author;
+    private String content;
+//    private Integer author_id;
     private String category;
 }
