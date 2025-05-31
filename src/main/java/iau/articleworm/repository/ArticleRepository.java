@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-import iau.articleworm.dto.*;
+import iau.articleworm.dto.Article.*;
 
 import iau.articleworm.model.Article;
 import iau.articleworm.model.Category;

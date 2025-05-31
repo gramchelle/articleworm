@@ -16,9 +16,7 @@ import org.springframework.http.HttpStatus;
 
 import iau.articleworm.service.concrete.ArticleService;
 import lombok.RequiredArgsConstructor;
-import iau.articleworm.dto.ArticleDto;
-import iau.articleworm.dto.ArticleSaveDto;
-import iau.articleworm.dto.ArticleUpdateDto;
+import iau.articleworm.dto.Article.*;
 import iau.articleworm.model.Article;
 
 @RestController

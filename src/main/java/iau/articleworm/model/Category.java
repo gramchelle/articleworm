@@ -25,3 +25,12 @@ public class Category {
     private String description;
 
 }
+/* 
+public enum Category {
+    TECHNOLOGY,
+    SCIENCE,
+    ART,
+    SPORTS,
+    BUSINESS
+}
+ */

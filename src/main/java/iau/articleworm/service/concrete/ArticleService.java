@@ -11,7 +11,7 @@ import iau.articleworm.repository.CategoryRepository;
 import iau.articleworm.repository.UserRepository;
 import iau.articleworm.service.abstracts.IArticleService;
 import lombok.RequiredArgsConstructor;
-import iau.articleworm.dto.*;
+import iau.articleworm.dto.Article.*;
 import iau.articleworm.model.Article;
 import iau.articleworm.model.Category;
 import iau.articleworm.model.User;

@@ -1,14 +1,16 @@
 package iau.articleworm.repository;
 
-import java.util.List;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
 import iau.articleworm.model.Follower;
+import iau.articleworm.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface FollowerRepository extends JpaRepository<Follower, Integer> {
-    
+import java.util.List;
+import java.util.Optional;
 
+public interface FollowerRepository extends JpaRepository<Follower, Long> {
+
+    List<Follower> findByUser(User user); // Takipçileri getirir
+    List<Follower> findByFollowerUser(User follower); // Takip ettikleri
+
+    Optional<Follower> findByUserAndFollowerUser(User user, User follower); // Takip ediyor mu?
 }

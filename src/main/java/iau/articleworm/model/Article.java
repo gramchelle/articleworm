@@ -32,7 +32,7 @@ public class Article {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", referencedColumnName = "category_id", nullable = false)
-    @JsonIgnore
+    @JsonIgnore // Bu alanı JSON serileştirmede yoksay
     private Category category;
 
     @Column(name = "created_at")

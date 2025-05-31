@@ -2,7 +2,7 @@ package iau.articleworm.service.abstracts;
 
 import java.util.List;
 
-import iau.articleworm.dto.ArticleUpdateDto;
+import iau.articleworm.dto.Article.ArticleUpdateDto;
 import iau.articleworm.model.Article;
 
 public interface IArticleService {

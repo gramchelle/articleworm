@@ -1,15 +1,13 @@
-package iau.articleworm.dto;
+package iau.articleworm.dto.Article;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class ArticleDto{
-    
-    private Long id;
+public class ArticleUpdateDto {
+
     private String title;
     private String content;
-//    private Integer author_id;
     private String category;
 }
