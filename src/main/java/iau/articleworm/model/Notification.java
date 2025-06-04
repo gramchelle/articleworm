@@ -1,10 +1,9 @@
 package iau.articleworm.model;
 
-import java.time.LocalDateTime;
-import java.util.Set;
-
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -14,23 +13,30 @@ public class Notification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "notification_id")
-    private int notificationId;
+    private Integer notificationId;
 
-    // @ManyToMany ile tekil ilişkiyi tanımlarken doğru kullanımı uygulayalım.
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-        name = "notification_user", // Ortak tablo ismi
-        joinColumns = @JoinColumn(name = "notification_id"),
-        inverseJoinColumns = @JoinColumn(name = "user_id")
-    )
-    private Set<User> users;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    //@JsonBackReference
+    private User user;
 
     @Column(name = "notification_message")
-    private String notificationMessage; // like, comment, follow
+    private String notificationMessage;
 
     @Column(name = "is_read")
     private boolean isRead;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    @Column(name = "article_id")
+    private Integer articleId;
+
+    @Column(name = "notification_type")
+    private String notificationType; // "LIKE", "COMMENT", "FOLLOW", etc.
+    
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+    }
 }

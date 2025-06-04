@@ -1,6 +1,7 @@
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\ArticlewormApplication.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\AppConfig.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\JwtAuthFilter.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\JwtRequestFilter.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\JwtUtil.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\SecurityConfig.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\WebConfig.java
@@ -8,6 +9,7 @@ C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articl
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\AuthController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\CommentController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\FollowerController.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\NotificationController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\ReactionController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\UserController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Article\ArticleDto.java
@@ -19,6 +21,7 @@ C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articl
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Comment\CommentDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Comment\CommentRequestDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Comment\UserCommentDto.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Notification\CreateNotificationRequest.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Reaction\ReactionRequestDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Reaction\ReactionResponseByArticleDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Reaction\ReactionResponseDto.java
@@ -54,5 +57,6 @@ C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articl
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\CommentService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\CustomUserDetailsService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\FollowerService.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\NotificationService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\ReactionService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\UserService.java

@@ -6,12 +6,15 @@ iau\articleworm\repository\UserRepository.class
 iau\articleworm\service\concrete\ReactionService.class
 iau\articleworm\service\abstracts\IReactionService.class
 iau\articleworm\service\abstracts\IArticleService.class
+iau\articleworm\controller\NotificationController.class
 iau\articleworm\model\Reaction.class
 iau\articleworm\service\concrete\UserService.class
 iau\articleworm\service\abstracts\IUserService.class
 iau\articleworm\config\SecurityConfig.class
 iau\articleworm\dto\Reaction\ReactionResponseByArticleDto.class
+iau\articleworm\config\JwtRequestFilter.class
 iau\articleworm\repository\NotificationRepository.class
+iau\articleworm\dto\Notification\CreateNotificationRequest.class
 iau\articleworm\config\AppConfig.class
 iau\articleworm\service\abstracts\ICommentService.class
 iau\articleworm\dto\Reaction\ReactionRequestDto.class
@@ -32,6 +35,7 @@ iau\articleworm\config\JwtAuthFilter.class
 iau\articleworm\controller\FollowerController.class
 iau\articleworm\repository\ReactionRepository.class
 iau\articleworm\dto\Comment\UserCommentDto.class
+iau\articleworm\service\concrete\NotificationService.class
 iau\articleworm\dto\User\UserDto.class
 iau\articleworm\dto\Auth\LoginRequestDto.class
 iau\articleworm\mapper\ReactionMapper.class

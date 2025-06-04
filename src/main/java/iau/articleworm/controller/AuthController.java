@@ -74,7 +74,7 @@ public class AuthController {
         }
     }
 
-    @GetMapping("/test-user/{username}")
+    @GetMapping("/test-user/only/i/can/try/this/url/{username}")
     public ResponseEntity<?> testLoadUser(@PathVariable String username) {
         try {
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);

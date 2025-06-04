@@ -2,6 +2,7 @@ package iau.articleworm.model;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -11,6 +12,7 @@ import lombok.Data;
 //import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Data
 @Entity
@@ -45,9 +47,10 @@ public class User /*implements UserDetails*/{
     //@JsonIgnore
     private Set<Follower> following; // Kullanıcının takip ettikleri
 
-    @ManyToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     //@JsonIgnore
-    private Set<Notification> notifications;
+    //@JsonManagedReference
+    private List<Notification> notifications;
 /*
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
