@@ -43,6 +43,6 @@ public class Reaction {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "article_id", referencedColumnName = "article_id", nullable = false)
-    //@JsonIgnore
+    //@JsonIgnore // Eğer Reaction üzerinden Article serialization'ında sonsuz döngü oluyorsa açabiliriz
     private Article article;
 }

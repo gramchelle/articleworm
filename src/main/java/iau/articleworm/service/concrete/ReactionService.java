@@ -10,6 +10,7 @@ import iau.articleworm.repository.ReactionRepository;
 import iau.articleworm.service.abstracts.IReactionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,9 +20,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ReactionService implements IReactionService {
 
-   /*  private final ReactionRepository reactionRepository;
+    private final ReactionRepository reactionRepository;
 
-    //@Override
+    @Transactional
     public Reaction addOrUpdateReaction(User user, Article article, ReactionType reactionType) {
         Optional<Reaction> existingReactionOpt = reactionRepository.findByUserAndArticle(user, article);
 
@@ -38,9 +39,7 @@ public class ReactionService implements IReactionService {
 
         return reactionRepository.save(reaction);
     }
- */
 
-/*     @Override
     public List<ReactionResponseByArticleDto> getReactionsByArticle(Integer articleId) {
         List<Reaction> reactions = reactionRepository.findByArticleId(articleId);
 
@@ -62,5 +61,5 @@ public class ReactionService implements IReactionService {
         dto.setUser(userDTO);
 
         return dto;
-    } */
+    }
 }

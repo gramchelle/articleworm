@@ -15,7 +15,7 @@ public class Notification {
     @Column(name = "notification_id")
     private Integer notificationId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne //(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     //@JsonBackReference
     private User user;

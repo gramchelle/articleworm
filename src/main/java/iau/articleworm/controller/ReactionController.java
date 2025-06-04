@@ -22,7 +22,7 @@ import java.util.Optional;
 @RequestMapping("/api/reactions")
 @RequiredArgsConstructor
 public class ReactionController {
-/* 
+
     private final ReactionService reactionService;
     private final UserRepository userRepository;
     private final ArticleRepository articleRepository;
@@ -74,12 +74,11 @@ public class ReactionController {
 
         return dto;
     }
- */
-    // ABOVE IS WORKING
-/* 
+
+
     @GetMapping("/article/{articleId}")
     public ResponseEntity<List<ReactionResponseByArticleDto>> getReactionsByArticle(@PathVariable Integer articleId) {
         List<ReactionResponseByArticleDto> reactions = reactionService.getReactionsByArticle(articleId);
         return new ResponseEntity<>(reactions, HttpStatus.OK);
-    } */
+    }
 }
