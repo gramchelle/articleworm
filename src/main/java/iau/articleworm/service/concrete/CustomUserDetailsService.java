@@ -1,36 +1,36 @@
-/*package iau.articleworm.service.concrete;
+package iau.articleworm.service.concrete;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import iau.articleworm.model.User;
 import iau.articleworm.repository.UserRepository;
+import io.jsonwebtoken.lang.Collections;
 import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
-    
-    private final UserRepository userRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        return userRepository.findByEmail(email)
-            .orElseThrow(() -> new UsernameNotFoundException("Kullanıcı bulunamadı: " + email));
-    }
+    public UserDetails loadUserByUsername(String username) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Kullanıcı bulunamadı"));
 
-    /*     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = userRepository.findByEmail(email)
-            .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
-        
-        // Burada User entity'sini Spring Security'nin UserDetails'ine dönüştürmeliyiz.
+        List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority(user.getRole()));
+
         return new org.springframework.security.core.userdetails.User(
-            user.getEmail(),
-            user.getPassword(),
-            AuthorityUtils.createAuthorityList(user.getRole())
+                user.getUsername(), user.getPassword(), authorities
         );
-     // burayı yorum satırı olarak bırakıyoruz çünkü UserDetails'i doğrudan User entity'sinden dönüştürmek yerine, UserRepository'den dönen UserDetails'i kullanıyoruz. Bu, daha temiz ve anlaşılır bir kod sağlar.
+    }
 }
-*/

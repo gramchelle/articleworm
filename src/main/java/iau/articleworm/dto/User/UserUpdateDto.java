@@ -14,8 +14,7 @@ public class UserUpdateDto {
     private String username;
     private String password;
 
-    private String role; // "ROLE_USER", "ROLE_ADMIN" gibi roller
-
+    private String role;
     private Set<Follower> following;
     private Set<Follower> followers;
 }

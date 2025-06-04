@@ -7,8 +7,8 @@ import java.util.Set;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

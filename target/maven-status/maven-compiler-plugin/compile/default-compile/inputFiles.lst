@@ -1,6 +1,11 @@
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\ArticlewormApplication.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\AppConfig.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\JwtAuthFilter.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\JwtUtil.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\SecurityConfig.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\WebConfig.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\ArticlesController.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\AuthController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\CommentController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\FollowerController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\ReactionController.java
@@ -8,6 +13,9 @@ C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articl
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Article\ArticleDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Article\ArticleSaveDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Article\ArticleUpdateDto.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Auth\JwtResponse.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Auth\LoginRequestDto.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Auth\RegisterRequestDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Comment\CommentDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Comment\CommentRequestDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Comment\UserCommentDto.java
@@ -19,7 +27,6 @@ C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articl
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\User\UserDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\User\UserSaveDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\User\UserUpdateDto.java
-C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\jwtsecurity\JwtUtil.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\mapper\ReactionMapper.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\model\Article.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\model\Category.java
@@ -28,6 +35,7 @@ C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articl
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\model\Notification.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\model\Reaction.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\model\ReactionType.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\model\Role.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\model\User.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\repository\ArticleRepository.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\repository\CategoryRepository.java
