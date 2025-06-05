@@ -35,11 +35,11 @@ public class ArticleService implements IArticleService {
         article.setTitle(dto.getTitle());
         article.setContent(dto.getContent());
 
-        User user = userRepository.findById(dto.getAuthor_id())
+        User user = userRepository.findById(dto.getAuthorId())
             .orElseThrow(() -> new RuntimeException("User not found"));
         article.setUser(user);
 
-        Category category = categoryRepository.findById(dto.getCategory_id())
+        Category category = categoryRepository.findById(dto.getCategoryId())
             .orElseThrow(() -> new RuntimeException("Category not found"));
         article.setCategory(category);
 
