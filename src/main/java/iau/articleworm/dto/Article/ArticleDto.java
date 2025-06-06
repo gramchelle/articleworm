@@ -9,10 +9,12 @@ import java.util.List;
 @Setter
 public class ArticleDto {
 
-    private Long id;
+    private Integer id;
     private String title;
     private String content;
     private String category;
+    private Integer authorId;
+    private String authorName;
     private List<String> reactions;
 
 }

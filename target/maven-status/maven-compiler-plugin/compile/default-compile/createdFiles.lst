@@ -12,6 +12,7 @@ iau\articleworm\service\concrete\UserService.class
 iau\articleworm\service\abstracts\IUserService.class
 iau\articleworm\config\SecurityConfig.class
 iau\articleworm\dto\Reaction\ReactionResponseByArticleDto.class
+iau\articleworm\security\AuthUserDetails.class
 iau\articleworm\config\JwtRequestFilter.class
 iau\articleworm\repository\NotificationRepository.class
 iau\articleworm\dto\Notification\CreateNotificationRequest.class
@@ -27,6 +28,7 @@ iau\articleworm\controller\AuthController.class
 iau\articleworm\dto\Reaction\ReactionResponseDto.class
 iau\articleworm\controller\ArticlesController.class
 iau\articleworm\model\Follower.class
+iau\articleworm\security\GenerateJwtKey.class
 iau\articleworm\service\concrete\CustomUserDetailsService.class
 iau\articleworm\ArticlewormApplication.class
 iau\articleworm\model\Category.class

@@ -211,7 +211,7 @@ public class UserService implements IUserService {
 
     private ArticleDto convertToDto(Article article) {
         ArticleDto dto = new ArticleDto();
-        dto.setId(article.getArticle_id().longValue());
+        dto.setId(article.getArticle_id());
         dto.setTitle(article.getTitle());
         dto.setContent(article.getContent());
         dto.setCategory(article.getCategory().getCategoryName());

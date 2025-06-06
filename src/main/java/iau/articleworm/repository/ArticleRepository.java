@@ -15,5 +15,9 @@ public interface ArticleRepository extends JpaRepository<Article, Integer> {
 
     Optional<Article> findByTitle(String title);
     List<Article> findAllByCategory(Category category);
+    List<Article> findByCategory_CategoryId(Integer categoryId);
+    List<Article> findByUser_UserId(Integer userId);
+
+    List<Article> findByCategory_CategoryName(String categoryName);
 
 }

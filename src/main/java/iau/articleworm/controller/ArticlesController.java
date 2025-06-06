@@ -62,4 +62,18 @@ public class ArticlesController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/category/id/{categoryId}")
+    public ResponseEntity<List<ArticleDto>> getArticlesByCategoryId(@PathVariable Integer categoryId) {
+        List<ArticleDto> articles = articleService.getArticlesByCategoryId(categoryId);
+        return new ResponseEntity<>(articles, HttpStatus.OK);
+    }
+
+    @GetMapping("/category/name/{categoryName}")
+    public ResponseEntity<List<ArticleDto>> getArticlesByCategoryName(@PathVariable String categoryName) {
+        List<ArticleDto> articles = articleService.getArticlesByCategoryName(categoryName);
+        return new ResponseEntity<>(articles, HttpStatus.OK);
+    }
+
+
 }

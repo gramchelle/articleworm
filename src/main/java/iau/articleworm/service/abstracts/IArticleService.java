@@ -13,5 +13,7 @@ public interface IArticleService {
     Article createArticle(Article article);
     Article updateArticle(Long article_id, ArticleUpdateDto articleUpdateDto);
     void deleteArticle(Long id);
+    List<Integer> getArticleIdsByCategoryId(Integer categoryId);
+
 
 }

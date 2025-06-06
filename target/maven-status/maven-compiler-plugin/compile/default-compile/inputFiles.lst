@@ -7,6 +7,7 @@ C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articl
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\config\WebConfig.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\ArticlesController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\AuthController.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\CategoryController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\CommentController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\FollowerController.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\controller\NotificationController.java
@@ -47,6 +48,8 @@ C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articl
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\repository\NotificationRepository.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\repository\ReactionRepository.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\repository\UserRepository.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\security\AuthUserDetails.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\security\GenerateJwtKey.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\abstracts\IArticleService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\abstracts\ICommentService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\abstracts\IFollowerService.java
@@ -54,6 +57,7 @@ C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articl
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\abstracts\IUserService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\ArticleService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\AuthService.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\CategoryService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\CommentService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\CustomUserDetailsService.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\service\concrete\FollowerService.java

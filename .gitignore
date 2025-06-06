@@ -32,3 +32,5 @@ build/
 .vscode/
 *.txt
 *.odt
+/target/
+*.jar

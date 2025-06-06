@@ -101,7 +101,9 @@ public class ArticleService implements IArticleService {
 
     public ArticleDto convertToDto(Article article) {
         ArticleDto dto = new ArticleDto();
-        dto.setId(article.getArticle_id().longValue());
+        dto.setAuthorName(article.getUser().getUsername());
+        dto.setId(article.getArticle_id());
+        dto.setAuthorId(article.getUser().getUserId());
         dto.setTitle(article.getTitle());
         dto.setContent(article.getContent());
         dto.setCategory(article.getCategory().getCategoryName());
@@ -114,5 +116,36 @@ public class ArticleService implements IArticleService {
 
         return dto;
     }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Integer> getArticleIdsByCategoryId(Integer categoryId) {
+        return articleRepository.findByCategory_CategoryId(categoryId.intValue())
+                                .stream()
+                                .map(article -> article.getArticle_id())
+                                .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public List<Integer> getArticleIdsByAuthorId(Integer authorId) {
+        return articleRepository.findByUser_UserId(authorId.intValue())
+                                .stream()
+                                .map(article -> article.getArticle_id())
+                                .collect(Collectors.toList());
+    }
+
+
+    @Transactional(readOnly = true)
+    public List<ArticleDto> getArticlesByCategoryId(Integer categoryId) {
+        List<Article> articles = articleRepository.findByCategory_CategoryId(categoryId);
+        return articles.stream().map(this::convertToDto).toList();
+    }
+
+    @Transactional(readOnly = true)
+    public List<ArticleDto> getArticlesByCategoryName(String categoryName) {
+        List<Article> articles = articleRepository.findByCategory_CategoryName(categoryName);
+        return articles.stream().map(this::convertToDto).toList();
+    }
+
 
 }
