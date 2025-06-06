@@ -34,3 +34,4 @@ build/
 *.odt
 /target/
 *.jar
+*.sql
