@@ -20,6 +20,7 @@ C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articl
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Auth\LoginRequestDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Auth\RegisterRequestDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Category\CategoryDto.java
+C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Category\CategoryListDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Comment\CommentDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Comment\CommentRequestDto.java
 C:\Users\Özlem Nur\Desktop\articleworm-project\backend\src\main\java\iau\articleworm\dto\Comment\UserCommentDto.java
