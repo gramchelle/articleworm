@@ -1,14 +1,19 @@
 package iau.articleworm.controller;
 
-import iau.articleworm.dto.Notification.CreateNotificationRequest;
-import iau.articleworm.model.Notification;
-import iau.articleworm.service.concrete.NotificationService;
-import lombok.RequiredArgsConstructor;
-
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import iau.articleworm.dto.Notification.CreateNotificationRequest;
+import iau.articleworm.dto.Notification.NotificationRequestDto;
+import iau.articleworm.service.concrete.NotificationService;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/notifications")
@@ -29,7 +34,7 @@ public class NotificationController {
     }
 
     @GetMapping("/unread/{userId}")
-    public ResponseEntity<List<Notification>> getUnread(@PathVariable Integer userId) {
+    public ResponseEntity<List<NotificationRequestDto>> getUnread(@PathVariable Integer userId) {
         return ResponseEntity.ok(notificationService.getUnreadNotifications(userId));
     }
 
@@ -37,6 +42,11 @@ public class NotificationController {
     public ResponseEntity<String> markRead(@PathVariable Integer notificationId) {
         notificationService.markAsRead(notificationId);
         return ResponseEntity.ok("Notification marked as read");
+    }
+
+    @GetMapping("/all/{userId}")
+    public ResponseEntity<List<NotificationRequestDto>> getAllNotifications(@PathVariable Integer userId) {
+        return ResponseEntity.ok(notificationService.getAllNotifications(userId));
     }
 
 }

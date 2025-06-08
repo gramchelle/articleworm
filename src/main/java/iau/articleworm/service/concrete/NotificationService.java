@@ -1,15 +1,17 @@
 package iau.articleworm.service.concrete;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import iau.articleworm.dto.Notification.NotificationRequestDto;
 import iau.articleworm.model.Notification;
 import iau.articleworm.model.User;
 import iau.articleworm.repository.NotificationRepository;
 import iau.articleworm.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -33,13 +35,6 @@ public class NotificationService {
         notificationRepository.save(notification);
     }
 
-    public List<Notification> getUnreadNotifications(Integer userId) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-
-        return notificationRepository.findByUserAndIsReadFalse(user);
-    }
-
     @Transactional
     public void markAsRead(Integer notificationId) {
         Notification notification = notificationRepository.findById(notificationId)
@@ -48,4 +43,40 @@ public class NotificationService {
         notification.setRead(true);
         notificationRepository.save(notification);
     }
+
+    public List<NotificationRequestDto> getUnreadNotifications(Integer userId) {
+    User user = userRepository.findById(userId)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+
+    List<Notification> notifications = notificationRepository.findByUserAndIsReadFalse(user);
+
+    return notifications.stream()
+            .map(n -> new NotificationRequestDto(
+                    n.getNotificationId(),
+                    n.getNotificationMessage(),
+                    n.getNotificationType(),
+                    n.isRead(),
+                    n.getUser().getUserId(),
+                    n.getArticleId()
+            ))
+            .toList();
+        }
+
+    public List<NotificationRequestDto> getAllNotifications(Integer userId) {
+    User user = userRepository.findById(userId)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+
+    List<Notification> notifications = notificationRepository.findByUser(user);
+
+    return notifications.stream()
+            .map(n -> new NotificationRequestDto(
+                    n.getNotificationId(),
+                    n.getNotificationMessage(),
+                    n.getNotificationType(),
+                    n.isRead(),
+                    n.getUser().getUserId(),
+                    n.getArticleId()
+            ))
+            .toList();
+}
 }
