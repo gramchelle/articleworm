@@ -1,6 +1,7 @@
 package iau.articleworm.controller;
 
-import org.springframework.data.repository.query.Param;
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import iau.articleworm.dto.Category.CategoryDto;
+import iau.articleworm.dto.Category.CategoryListDto;
 import iau.articleworm.service.concrete.CategoryService;
 import lombok.RequiredArgsConstructor;
 
@@ -35,8 +37,8 @@ public class CategoryController {
     }
 
     @GetMapping("/list")
-    public ResponseEntity<String> listCategories() {
-        return new ResponseEntity<>(categoryService.listCategories(), HttpStatus.OK);
+    public ResponseEntity<List<CategoryListDto>> listCategories() {
+        return ResponseEntity.ok(categoryService.listCategories());
     }
 
     // NOT working yet, need to fix the delete method in CategoryService

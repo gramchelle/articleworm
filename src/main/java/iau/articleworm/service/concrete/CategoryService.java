@@ -1,9 +1,13 @@
 package iau.articleworm.service.concrete;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import iau.articleworm.dto.Category.CategoryDto;
+import iau.articleworm.dto.Category.CategoryListDto;
 import iau.articleworm.model.Category;
 import iau.articleworm.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,12 +31,10 @@ public class CategoryService {
         categoryRepository.save(category);
     }
 
-    public String listCategories() {
-        StringBuilder categoriesList = new StringBuilder("Categories:\n");
-        categoryRepository.findAll().forEach(category -> 
-            categoriesList.append(category.getCategoryName()).append("\n")
-        );
-        return categoriesList.toString();
+    public List<CategoryListDto> listCategories() {
+        return categoryRepository.findAll().stream()
+            .map(category -> new CategoryListDto(category.getCategoryId(), category.getCategoryName()))
+            .collect(Collectors.toList());
     }
 
     public String deleteCategory(String categoryName) {
