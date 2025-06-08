@@ -44,9 +44,12 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+            .cors() // <-- BUNU EKLE
+            .and()
             .csrf().disable()
             .authorizeHttpRequests()
                 .anyRequest().permitAll();
+
         return http.build();
     }
 
@@ -64,7 +67,11 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        config.setAllowedOrigins(List.of("https://localhost:3000", "https://your-frontend.vercel.app", "https://project.erdemkoyuncu.com"));
+        config.setAllowedOrigins(List.of(
+            "https://localhost:3000",
+            "https://your-frontend.vercel.app",
+            "https://project.erdemkoyuncu.com"
+        ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
