@@ -38,20 +38,10 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable()
+        http
+            .csrf().disable()
             .authorizeHttpRequests()
-            .requestMatchers("/api/auth/login").permitAll()
-            .requestMatchers("/api/auth/register").permitAll()
-            .requestMatchers("/admin/**").hasAuthority("ADMIN")
-            .requestMatchers("/author/**").hasAuthority("AUTHOR")
-            .requestMatchers("/reader/**").hasAnyAuthority("READER", "AUTHOR", "ADMIN")
-            .anyRequest().authenticated()
-            .and()
-            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and()
-            .authenticationProvider(authenticationProvider())
-            .addFilterBefore(jwtAuthFilter(), UsernamePasswordAuthenticationFilter.class);
-
+                .anyRequest().permitAll();
         return http.build();
     }
 
