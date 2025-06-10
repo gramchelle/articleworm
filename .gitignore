@@ -34,4 +34,4 @@ build/
 *.odt
 /target/
 *.jar
-*.sql
+#*.sql
