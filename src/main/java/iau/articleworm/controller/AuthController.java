@@ -1,8 +1,8 @@
 package iau.articleworm.controller;
 
 import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,18 +17,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import iau.articleworm.dto.Article.ArticleDto;
-import iau.articleworm.dto.Auth.*;
-import iau.articleworm.dto.User.UserSaveDto;
 import iau.articleworm.config.JwtUtil;
-import iau.articleworm.model.Article;
-import iau.articleworm.model.User;
+import iau.articleworm.dto.Auth.LoginRequestDto;
+import iau.articleworm.dto.User.UserSaveDto;
 import iau.articleworm.repository.UserRepository;
 import iau.articleworm.service.concrete.CustomUserDetailsService;
 import iau.articleworm.service.concrete.UserService;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -44,7 +38,7 @@ public class AuthController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody UserSaveDto request) {
+    public ResponseEntity<Map<String, String>> register(@RequestBody UserSaveDto request) {
         String encodedPassword = passwordEncoder.encode(request.getPassword());
         request.setPassword(encodedPassword);
 
@@ -54,7 +48,9 @@ public class AuthController {
 
         userService.createUser(request);
 
-        return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "User registered successfully");
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @PostMapping("/login")

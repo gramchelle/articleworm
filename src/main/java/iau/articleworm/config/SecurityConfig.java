@@ -70,7 +70,8 @@ public class SecurityConfig {
         config.setAllowedOrigins(List.of(
             "https://localhost:3000",
             "https://your-frontend.vercel.app",
-            "https://project.erdemkoyuncu.com"
+            "https://project.erdemkoyuncu.com",
+            "https://sw-architecture-project.vercel.app"  // BU ÖNEMLİ!
         ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
