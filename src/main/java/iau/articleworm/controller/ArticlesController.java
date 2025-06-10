@@ -2,6 +2,9 @@ package iau.articleworm.controller;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,14 +13,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.http.ResponseEntity;
-import org.modelmapper.ModelMapper;
-import org.springframework.http.HttpStatus;
 
+import iau.articleworm.dto.Article.ArticleDto;
+import iau.articleworm.dto.Article.ArticleSaveDto;
+import iau.articleworm.dto.Article.ArticleUpdateDto;
+import iau.articleworm.model.Article;
 import iau.articleworm.service.concrete.ArticleService;
 import lombok.RequiredArgsConstructor;
-import iau.articleworm.dto.Article.*;
-import iau.articleworm.model.Article;
 
 @RestController
 @RequestMapping("/api/articles")
@@ -51,13 +53,13 @@ public class ArticlesController {
     }
 
     @PutMapping("/{article_id}/update")
-    public ResponseEntity<Article> updateArticle(
+    public ResponseEntity<String> updateArticle(
             @PathVariable Long article_id,
             @RequestBody ArticleUpdateDto articleUpdateDto) {
-
+        
         Article updatedArticle = articleService.updateArticle(article_id, articleUpdateDto);
         if (updatedArticle != null) {
-            return new ResponseEntity<>(updatedArticle, HttpStatus.OK);
+            return new ResponseEntity<>("Article updated successfully", HttpStatus.OK);
         } else {
             return ResponseEntity.notFound().build();
         }
